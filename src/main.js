@@ -7,8 +7,6 @@ import Directive from './Directive/';
 import Module from './Module/';
 import Config , {Constant,ServicePhpApi} from "./Config/";
 
-
-
 const lwj = angular.module('lwj', ['ionic',uirouter])
 					.config(Routes);
 
