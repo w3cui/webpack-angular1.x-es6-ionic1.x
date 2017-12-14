@@ -81,6 +81,15 @@ module.exports = {
         'ionic': 'ionic'
     },
 
+    
+    devServer: {
+        hot: true,
+        inline: true,
+        contentBase: path.resolve(__dirname),
+        port: '8088',
+        disableHostCheck: true
+    },
+
     plugins: [
         new CopyWebpackPlugin([{
             from: __dirname + '/src/style', 

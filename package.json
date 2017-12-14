@@ -4,7 +4,7 @@
   "description": "基于webpack + es6 + angular1.x + ionic1.x脚手架",
   "main": "index.js",
   "scripts": {
-    "test": "node server.js -p",
+    "test": "webpack-dev-server --inline --hot --config webpack.dev.config.js",
     "start": "webpack --config webpack.pro.config.js -p"
   },
   "repository": {

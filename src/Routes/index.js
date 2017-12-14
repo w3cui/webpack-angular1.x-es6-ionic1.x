@@ -1,20 +1,46 @@
-import home from '../Module/Home/home-grid.html';
-import news from '../Module/News/news-grid.html';
+/*
+ * 路由配置
+ */
+import news from '../module/news/news-grid.html';
+import {getRedux,readRedux} from '../redux';
+
 const state = [
-  ['home', { // 这个是路由名称
-    url: '/', // 这个是url
-    template: home, // 这个是模板位置
-    controller: 'module.home.controler', // 这个是对应模板的controller名称！记住是名称不是位置
-  }],
-  ['news', {
-    url: '/news',
-    template: news,
-    controller: 'module.news.controler.grid',
-  }],
+	['news', {
+		url: '/news',
+		template: news,
+		controller: 'module.news.controler.grid',
+	}],
 ];
-export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
-  state.forEach((value) => {
-    $stateProvider.state(...value);
-  })
-  $urlRouterProvider.otherwise('/');
-}];
+
+alert("2fdsafdsafadsfdasfdsafdsafadsdsafds22");
+
+// 通用路由配置
+export default {
+	config: ['$stateProvider', '$urlRouterProvider', 'routerProvider', '$locationProvider',($stateProvider, $urlRouterProvider, routerProvider,$locationProvider) => {
+		state.forEach((value) => {
+			$stateProvider.state(...value);
+		});
+		// $locationProvider.html5Mode(true);
+		$urlRouterProvider.otherwise('/home/grid');
+	}],
+
+	run: (router) => {
+		router.setUpRoutes();
+	},
+
+	provider: ['router', function($stateProvider) {    
+		this.$get = function($http, $state) {      
+			return {        
+				setUpRoutes: function() {
+					readRedux({
+						type: "ROUTES"
+					}).forEach((value) => {
+						$stateProvider.state(...value);
+					});
+				}      
+			}    
+		};
+		return this;  
+	}]
+
+};
