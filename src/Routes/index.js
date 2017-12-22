@@ -12,7 +12,6 @@ const state = [
 	}],
 ];
 
-alert("2fdsafdsafadsfdasfdsafdsafadsdsafds22");
 
 // 通用路由配置
 export default {
