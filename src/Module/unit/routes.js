@@ -1,6 +1,6 @@
 import update from './view/form.html';
 import grid from './view/grid.html';
-import {getRedux,readRedux} from '../../redux';
+import {getRedux,readRedux} from '../../Redux';
 
 const state = [
   ['unit_grid', { 

@@ -70,7 +70,9 @@ module.exports = {
         moduleDirectories: [
             'bower_components',
         ],
-        alias: {}
+        alias: {
+            '@':path.resolve(__dirname,'src'),
+        }
     },
 
     externals: {

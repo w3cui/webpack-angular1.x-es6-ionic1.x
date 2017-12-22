@@ -1,8 +1,8 @@
 /*
  * 路由配置
  */
-import news from '../module/news/news-grid.html';
-import {getRedux,readRedux} from '../redux';
+import news from '../module/News/news-grid.html';
+import {getRedux,readRedux} from '../Redux';
 
 const state = [
 	['news', {
@@ -20,11 +20,12 @@ export default {
 			$stateProvider.state(...value);
 		});
 		// $locationProvider.html5Mode(true);
-		$urlRouterProvider.otherwise('/home/grid');
+		$urlRouterProvider.otherwise('/unit/grid');
 	}],
 
 	run: (router) => {
 		router.setUpRoutes();
+		console.log(router);
 	},
 
 	provider: ['router', function($stateProvider) {    

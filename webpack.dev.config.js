@@ -72,7 +72,9 @@ module.exports = {
         moduleDirectories: [
             'bower_components',
         ],
-        alias: {}
+        alias: {
+            '@':path.resolve(__dirname,'src'),
+        }
     },
 
     externals: {
@@ -91,14 +93,14 @@ module.exports = {
     },
 
     plugins: [
-        new CopyWebpackPlugin([{
-            from: __dirname + '/src/style', 
-            to: __dirname + '/build/style',
-        }], {
-            ignore: [],
-            copyUnmodified: true,
-            debug: "debug"
-        }),
+        // new CopyWebpackPlugin([{
+        //     from: __dirname + '/src/style', 
+        //     to: __dirname + '/build/style',
+        // }], {
+        //     ignore: [],
+        //     copyUnmodified: true,
+        //     debug: "debug"
+        // }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             title: 'Angular with webpack',

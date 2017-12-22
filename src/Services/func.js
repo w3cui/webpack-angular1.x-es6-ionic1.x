@@ -1216,5 +1216,5 @@ let updateFunc = function($scope, $http, $location, options, $modal, $selectModa
 };
 
 
-export default lwj;
+export default {gridFunc,updateFunc};
 export {gridFunc,updateFunc};

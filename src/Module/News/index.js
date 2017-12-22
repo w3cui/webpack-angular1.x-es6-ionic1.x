@@ -5,11 +5,12 @@
 
 import newsController from './controller';
 import newsServices from './services';
-import newsServices2 from '../Home/services';
+//import newsServices2 from '../Home/services';
 
 
 export default (lwj) => {
+	console.log(lwj);
 	return lwj.controller(...newsController)
-	.factory(...newsServices).
-	factory(...newsServices2);
+	.factory(...newsServices);
+	//factory(...newsServices2);
 }

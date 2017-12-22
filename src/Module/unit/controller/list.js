@@ -2,10 +2,10 @@
  *	@tql 2017/12/08
  *	首页控制器
  */
-import ServicePhpApi from '../../../config/index';
+import ServicePhpApi from '@/Config/index';
 
-import crud from '../../../services/crud';
-
+import func, {gridFunc,updateFunc} from '@/Services/func';
+console.log(ServicePhpApi);
 export default ["module.unit.grid.controler", ['$scope', "$http", "$ionicLoading", "$location","pageNationConfig", ($scope, $http, $ionicLoading, $location,pageNationConfig) => {
 	let queryItems = {
         'name':{
@@ -62,7 +62,7 @@ export default ["module.unit.grid.controler", ['$scope', "$http", "$ionicLoading
 		]
 	];
 
-	crud.gridFunc($scope, $http, $location, $ionicLoading, pageNationConfig, gridOptions, null, {
+	func.gridFunc($scope, $http, $location, $ionicLoading, pageNationConfig, gridOptions, null, {
 		'multiSelect': true
 	});
 

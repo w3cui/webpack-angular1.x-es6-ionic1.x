@@ -2,9 +2,9 @@
  *	@tql 2017/12/08
  *	首页控制器
  */
-import ServicePhpApi from '../../../config/index';
+import ServicePhpApi from '@/config/index';
 
-import func from '../../../services/func';
+import func, {gridFunc,updateFunc} from '@/Services/func';
 
 export default ["module.unit.update.controler", ['$scope', "$http", "$ionicLoading", "$location","pageNationConfig","$routeParams", ($scope, $http, $ionicLoading, $location,pageNationConfig,$routeParams) => {
 
