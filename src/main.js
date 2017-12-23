@@ -12,6 +12,9 @@ const lwj = angular.module('lwj', ['ionic',uirouter])
 	.provider(...Routes.provider)
 	.config(Routes.config)
 	.run(Routes.run);
+	
+// 记录app
+getRedux(lwj,{type:"APP"});
 
 // 注入 directive 
 Directive(lwj);
@@ -22,5 +25,3 @@ Module(lwj);
 // 注入统一配置
 Constant(lwj);
 
-// 记录app
-getRedux(lwj,{type:"APP"});

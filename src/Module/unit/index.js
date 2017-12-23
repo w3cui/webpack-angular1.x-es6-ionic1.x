@@ -6,9 +6,16 @@ import grid from './controller/list';
 import update from './controller/update';
 import services from './service/unit';
 import routes from './routes';
+import {
+	getRedux,
+	readRedux
+} from '@/Redux';
 
 export default (lwj) => {
-	return lwj.controller(...grid)
+	let app = readRedux({
+		type: "APP"
+	});
+	return app.controller(...grid)
 	.controller(...update)
 	.factory(...services);	
 	routes();
