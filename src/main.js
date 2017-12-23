@@ -6,7 +6,7 @@ import Routes from './Routes/';
 import Directive from './Directive/';
 import Module from './Module/';
 import Config , {Constant,ServicePhpApi} from "./Config/";
-import {getRedux,readRedux} from '../Redux';
+import {getRedux,readRedux} from './Redux'; 
 
 const lwj = angular.module('lwj', ['ionic',uirouter])
 	.provider(...Routes.provider)
