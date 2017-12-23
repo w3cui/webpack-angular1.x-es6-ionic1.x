@@ -36,3 +36,15 @@ export const removeRedux = (action) => {
   });
   return reduxScope;
 }
+
+/*
+ * 消耗数据
+ * @action => 回调
+ * @success => 监听回调
+ */
+export const watchRedux = (action,success) => {
+  setInterval(()=>{
+  	
+  },1000);
+  return reduxScope;
+}
