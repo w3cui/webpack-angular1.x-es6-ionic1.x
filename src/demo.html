@@ -179,11 +179,8 @@
     <script type="text/javascript">
       window.onload = function(){
         var i = html2canvas(document.body).then(function(canvas) {
-            //document.body.appendChild(canvas);
-      }
-			var url = canvas.toDataURL("image/png");
-			
-			$("#img2").attr("src",url);
+            var url = canvas.toDataURL("image/png");			
+            $("#img2").attr("src",url);
 			///var upload = $(".upload").attr("href", url).attr("download", "order-1111111111.png");
         });
       }
