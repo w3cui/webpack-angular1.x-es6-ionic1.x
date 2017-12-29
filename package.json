@@ -38,7 +38,7 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
-    "angular": "^1.6.0",
+    "angular": "^1.5.3",
     "angular-cache": "^4.6.0",
     "angular-ui-router": "^0.3.2",
     "ionic": "^2.1.17"
