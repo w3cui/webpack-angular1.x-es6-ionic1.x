@@ -175,6 +175,8 @@
     </p>
 	<img id="img2" />
 <script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.js"></script>
+<script src="https://clipboardjs.com/dist/clipboard.min.js"></script>
+
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script type="text/javascript">
       window.onload = function(){
@@ -183,6 +185,15 @@
             $("#img2").attr("src",url);
 			///var upload = $(".upload").attr("href", url).attr("download", "order-1111111111.png");
         });
+        $("#img2").click(function(){
+          new Clipboard('#img2', {
+              target: function() {
+                  return document.getElementById("#img2");
+              }
+          });
+        });
+       
+
       }
 		console.log(i);
     </script>
