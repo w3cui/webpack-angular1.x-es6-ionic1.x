@@ -1,0 +1,38 @@
+
+<div class="box-body ">
+  <table class="table table-hover modular-table-hover">
+      <tbody>
+        <tr>
+          <th>#</th>
+          <th>操作类型</th>
+          <th>操作时间</th>
+          <th>组件数量</th>
+        </tr>
+        <tr  data-ng-repeat="item in openitem" data-ng-click="onLocatSelected(item,$index);" data-ng-if="openitem.length>0" >
+          <td>
+          	<i class="modular_radio" data-ng-class="{'checked':!!item.radio}"></i>
+          </td>
+          <td>{{item.typeName}}</td>
+          <td>
+            {{ item.time | date:' HH:mm:ss '}}
+          </td>
+          <td>
+          	<span class="label label-info">{{item.data.length}}</span>
+          </td>
+        </tr>
+
+       	<tr data-ng-if=" openitem.length == 0">
+       		 <td  colspan ="5" class="text-center">
+    	   		暂无操作记录！
+    	   	</td>
+       	</tr>
+    </tbody>
+  </table>
+</div>
+
+<style type="text/css">
+  .modular-table-hover>tbody>tr>td, .modular-table-hover>tbody>tr>th, .modular-table-hover>tfoot>tr>td, .modular-table-hover>tfoot>tr>th, .modular-table-hover>thead>tr>td, .modular-table-hover>thead>tr>th{
+    border-top: 0;
+    border-bottom: solid 1px #ddd;
+  }
+</style>

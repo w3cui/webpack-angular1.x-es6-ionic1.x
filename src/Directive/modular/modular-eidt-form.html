@@ -1,0 +1,33 @@
+
+<ul class="modular-form-tab row" data-ng-init="modularFormTab = 'eidt'">
+	<li class="col-xs-6 col-sm-6 " 
+	data-ng-class="{'active':modularFormTab=='eidt'}" 
+	data-ng-click="modularFormTab = 'eidt'"
+	>
+		<a href="">内容</a>
+	</li>
+	<li class="col-xs-6 col-sm-6" 
+	data-ng-class="{'active':modularFormTab=='style'}" 
+	data-ng-click="modularFormTab = 'style'"
+	>
+		<a href="javascript:;">样式</a>
+	</li>
+</ul>
+
+<div class="modular-form-center">
+	<div class="modular-form-eidt" data-ng-if="modularFormTab == 'eidt'">
+		{{item}}
+		<form action="">
+			<input type="text" data-ng-model="item.icon" placeholder="" data-my-blur="getLocationbar('内容编辑【'+item.name+'】');" >
+			<input type="text" data-ng-model="item.name" placeholder="" data-my-blur="getLocationbar('内容编辑【'+item.name+'】');" >
+			<modular-form-web-upload class="btn btn-primary" data-item="{}"  >上传图片</modular-form-web-upload>
+			<modular-simditor data-ng-model="item.template" data-ng-if="item.template" data-blur="getLocationbar" data-model="item.template">
+				
+			</modular-simditor>
+		</form>
+	</div>
+	<div class="modular-form-style" data-ng-if="modularFormTab == 'style'">
+		{{item}}
+	</div>
+</div>
+

@@ -3,7 +3,7 @@
  * 共享数据存储处理
  */
  
-import * as _ from 'lodash';
+// import * as _ from 'lodash';
 
 let reduxScope = {};
 
@@ -12,7 +12,7 @@ let reduxScope = {};
  * @scope => 数据存储
  * @action => 参数
  */
-export const getRedux = (scope, action) => {
+ const getRedux = (scope, action) => {
 	reduxScope[action.type] = reduxScope[action.type] || [];
   reduxScope[action.type] = reduxScope[action.type].length != 0 ? [...reduxScope[action.type],...scope] : scope;
   return reduxScope;
@@ -22,7 +22,7 @@ export const getRedux = (scope, action) => {
  * 读取数据
  * @action => 参数
  */
-export const readRedux = (action) => {
+ const readRedux = (action) => {
   return reduxScope[action.type];
 }
 
@@ -30,7 +30,7 @@ export const readRedux = (action) => {
  * 消耗数据
  * @action => 参数
  */
-export const removeRedux = (action) => {
+ const removeRedux = (action) => {
   _.remove(reduxScope,(n) => {
     return n.type == action.type;
   });
@@ -42,9 +42,16 @@ export const removeRedux = (action) => {
  * @action => 回调
  * @success => 监听回调
  */
-export const watchRedux = (action,success) => {
+ const watchRedux = (action,success) => {
   setInterval(()=>{
   	
   },1000);
   return reduxScope;
 }
+
+export {
+  getRedux,
+  readRedux,
+  removeRedux,
+  watchRedux
+};

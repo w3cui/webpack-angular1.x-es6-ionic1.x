@@ -2,11 +2,11 @@
  *	@tql 2017/12/08
  *	首页控制器
  */
-import ServicePhpApi from '@/config/index';
+import ServicePhpApi from '@/Config/lwj-services-php-api';
 
 import func, {gridFunc,updateFunc} from '@/Services/func';
 
-export default ["module.unit.update.controler", ['$scope', "$http", "$ionicLoading", "$location","pageNationConfig","$routeParams", ($scope, $http, $ionicLoading, $location,pageNationConfig,$routeParams) => {
+export default ["module.unit.update.controler", ['$scope', "$http", "$ionicLoading", "$location","$routeParams", ($scope, $http, $ionicLoading, $location,pageNationConfig,$routeParams) => {
 
     $scope.unitTypeArr = [
         {"name":"请选择", "value":undefined},

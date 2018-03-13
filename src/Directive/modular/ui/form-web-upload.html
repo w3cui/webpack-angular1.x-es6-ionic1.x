@@ -1,0 +1,32 @@
+<div id="uploader"> 
+    <ul class="modular-upload-tab">
+        <li class="active"><a href="javascript:;">我的图片</a></li>
+        <li><a href="javascript:;">素材库</a></li>
+    </ul>
+    <div  class="wu-example">    
+        <div class="statusBar" style="display:none;">
+            <div class="progress">
+                <span class="text">0%</span>
+                <span class="percentage"></span>
+            </div><div class="info"></div>
+            <div class="btns">
+                <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+            </div>
+        </div>
+        <div class="queueList">
+            <div id="dndArea" class="placeholder">
+                <div id="filePicker"></div>
+                <p>或将照片拖到这里，单次最多可选300张</p>
+            </div>
+        </div>
+    </div>
+    <div class="modular-upload-list">   
+        <label>已选图片</label>
+        <p class="img" data-ng-repeat="data in item" ><img src="{{data.url}}" alt=""></p>
+    </div>
+    <div class="modular-upload-bottom">
+        <div class="btns">
+                <a class="webuploader-pick">取消添加</a><a class="uploadBtn">确认添加</a>
+            </div>
+    </div>
+</div>

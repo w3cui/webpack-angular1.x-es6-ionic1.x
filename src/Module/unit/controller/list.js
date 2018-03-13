@@ -4,9 +4,9 @@
  */
 import ServicePhpApi from '@/Config/index';
 
-import func, {gridFunc,updateFunc} from '@/Services/func';
+// import func, {gridFunc,updateFunc} from '@/Services/func';
 console.log(ServicePhpApi);
-export default ["module.unit.grid.controler", ['$scope', "$http", "$ionicLoading", "$location","pageNationConfig", ($scope, $http, $ionicLoading, $location,pageNationConfig) => {
+export default ["module.unit.grid.controler", ['$scope', "$http", "$ionicLoading", "$location", ($scope, $http, $ionicLoading, $location,pageNationConfig) => {
 	let queryItems = {
         'name':{
             field: 'name',

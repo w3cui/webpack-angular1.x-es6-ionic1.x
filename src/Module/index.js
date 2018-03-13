@@ -4,10 +4,10 @@
  */
 
 import Home from './Home/';
-import News from './News/';
+// import News from './News/';
 import Unit from "./Unit/";
 export default (lwj) => {
 	Home(lwj);
-	News(lwj);
+	// News(lwj);
 	Unit(lwj);
 }

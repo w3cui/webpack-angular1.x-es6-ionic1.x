@@ -8,6 +8,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 /**
  * Module dependencies
  */
+var ROOT_PATH = path.resolve(__dirname);
+var APP_PATH = path.resolve(ROOT_PATH, 'src'); //__dirname 中的src目录，以此类推
+
 module.exports = {
     cache: false,
     entry: {
@@ -26,23 +29,18 @@ module.exports = {
             exclude: /(node_modules|bower_components)/,
             loader: 'babel',
             query: {
-                presets: ['es2015']
+                presets: ['es2015'],
+                compact: false
             },
         }, {
             test: /\.html$/,
             loader: 'html'
-        },{
-            test: /\.js$/,
-            exclude: /^node_modules$/,
-            loader: 'babel'
         }, {
             test: /\.css$/,
-            exclude: /^node_modules$/,
-            loader: ExtractTextPlugin.extract('style', ['css', 'autoprefixer'])
+            loader: 'style!css'
         }, {
             test: /\.less$/,
-            exclude: /^node_modules$/,
-            loader: ExtractTextPlugin.extract('style', ['css', 'autoprefixer', 'less'])
+            loader: 'style!css!less',
         }, {
             test: /\.scss$/,
             exclude: /^node_modules$/,
@@ -67,13 +65,13 @@ module.exports = {
     resolve: {
         root: [
             './node_modules',
-            './src/lib'
+            './src/Lib'
         ],
         moduleDirectories: [
             'bower_components',
         ],
         alias: {
-            '@':path.resolve(__dirname,'src'),
+            '@': path.resolve(__dirname, 'src'),
         }
     },
 
@@ -83,16 +81,17 @@ module.exports = {
         'ionic': 'ionic'
     },
 
-    
+
     devServer: {
         hot: true,
-        inline: true,
+        inline: false,
         contentBase: path.resolve(__dirname),
-        port: '8088',
+        port: '8188',
         disableHostCheck: true
     },
 
     plugins: [
+        new ExtractTextPlugin("styles.css"),
         // new CopyWebpackPlugin([{
         //     from: __dirname + '/src/style', 
         //     to: __dirname + '/build/style',
@@ -107,8 +106,8 @@ module.exports = {
             inject: 'body'
         }),
         new OpenBrowserPlugin({
-            url: 'http://localhost:8088/build/index.html'
-        }),
+            url: 'http://localhost:8188/build/index.html'
+        })
     ],
-    watch:true
+    watch: true
 };

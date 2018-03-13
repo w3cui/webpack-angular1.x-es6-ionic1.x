@@ -1,10 +1,8 @@
-# webpack + angular1.x + es6 + ionic1.x 项目脚手架
-
-最近工作中遇到需要用webpack做一个打包angular1的项目，于是写了一个基于webpack + es6 + angular1.x + ionic1.x
+# "test": "webpack-dev-server --inline --hot --config webpack.dev.config.js",
 
 ```
 ### 初始化项目
-git clone https://github.com/w3cui/webpack-angular1.x-es6-ionic1.x-.git
+git clone 
 npm install
 
 ```

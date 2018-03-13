@@ -1,11 +1,13 @@
-let lwj = {};
-lwj.API = lwj.API || {};
-lwj.API.com = lwj.API.com || {};
-lwj.API.com.php = lwj.API.com.php || {};
-lwj.API.com.php.home = lwj.API.com.php.home || {};
+let APP = {};
+APP.API = APP.API || {};
+APP.API.com = APP.API.com || {};
+APP.API.com.php = APP.API.com.php || {};
+APP.API.com.php.home = APP.API.com.php.home || {};
+
+APP.API.com.php.pmc = APP.API.com.php.pmc || {};
 
 
-lwj.API.com.php.home.IndexController = ($http) => {
+APP.API.com.php.home.IndexController = ($http) => {
     return {
         getStoreDetail : (id, successCallBack, errorCallBack) => {
             http($http, '/cms/andaren/content/detail/' + id, {}, successCallBack, errorCallBack, "GET");
@@ -13,7 +15,19 @@ lwj.API.com.php.home.IndexController = ($http) => {
     }
 };
 
-export default lwj;
+// 可视化编辑交互地址
+APP.API.com.php.pmc.IndexController = ($http) => {
+    return {
+        getModularList : (id, successCallBack, errorCallBack) =>{
+            http($http, 'api/modular/list', {}, successCallBack, errorCallBack, "GET");
+        },
+        getModularViewList : (id, successCallBack, errorCallBack) =>{
+            http($http, 'api/modular/view/list', {}, successCallBack, errorCallBack, "POST");
+        },
+    }
+};
+
+export default APP;
 
 /**
  * 发起HTTP请求
@@ -28,7 +42,8 @@ function http($http, url, data, successCallBack, errorCallBack, method) {
     method = method || 'PUT';
     var params = {
         method: method.toUpperCase(),
-        url: url
+        // 配置api代理
+        url: "https://result.eolinker.com/B7hctqTb702bbc604f0da172f3daace6519bd929e93fae2?uri=" + url
     };
 
     if (params.method === 'GET') {

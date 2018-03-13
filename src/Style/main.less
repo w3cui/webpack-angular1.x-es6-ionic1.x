@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@import "./module/uploader.less";
+.modular-edit{ position: relative; overflow: hidden;}
+.modular-edit > div > div{ transition: all 400ms ease-out 0s;-o-transition: all 400ms ease-out 0s;-moz-transition: all 400ms ease-out 0s;  -webkit-transition: all 400ms ease-out 0s;transform-origin: center;}
+.modular-edit .mar-pad{ padding: 0; list-style-type: none; }
+.modular-edit .modular-type-list{ padding: 0;  list-style-type: none;display: block; background: #fff;}
+.modular-edit .modular-type-list li{ background: #fff;  text-align: center; border: 1px solid #f3f3f3; padding-bottom:15px; cursor: move;}
+.modular-edit .modular-type-list li .modular-icon{ display: block; line-height: 50px; height: 50px; text-align: center; font-size: 18px; color: #999;}
+.modular-edit .modular-type-list li{}
+
+.modular-edit .modular-center{  padding:80px 0 80px 0;  position: relative;}
+.modular-edit .modular-center .modular-center-bg{background:url(./images/eidt-cent-bg.png) #eee;    box-shadow: rgba(0, 0, 0, 0.4) 0 0 30px inset; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1;}
+.modular-edit .modular-center .modular-phone{ width: 375px; height: 667px;   background: #fff; margin:auto; position:relative; z-index: 5; overflow: hidden; overflow-y: auto;}
+.modular-edit .modular-center .modular-conentlist{border:solid 1px #fff; background: #fff;position: relative;cursor: move; z-index: 5; position:relative;}
+.modular-edit .modular-center .modular-conentlist .modular-remove{ position:absolute; top: 0; right: 0; width: 15px; height: 15px; line-height: 15px; text-align: center; cursor: pointer; font-size: 12px;  font-style: normal; background: #00adff; color: #fff;}
+.modular-edit .modular-center .modular-conentlist[ng-drop].drag-enter{ content: ""; background: #f5f5f5; display: block; border:1px dotted #0099DA; z-index: 3; }
+.modular-edit .modular-center .modular-conentlist[ng-drop].drag-move{ z-index: 10; background: #fff; opacity: .8;}
+.modular-edit .modular-center .modular-conentlist.active{border:solid 1px #00adff; box-shadow: 0px 0px 2px #00adff; z-index: 6;}
+.modular-edit .modular-center .modular-conentlist > div{}
+
+.modular_radio{width: 18px; height: 18px;overflow: hidden; display: inline-block; border:solid 1px #ddd; background: #fff; position: relative; z-index: 0; cursor:pointer; border-radius: 50px;}
+.modular_radio:hover,.modular_radio.checked{border:solid 1px #1abc9c;}
+.modular_radio.checked:before{ content: "";border-radius: 50px; overflow: hidden; width: 6px; height: 6px; background: #1abc9c; display: inline-block; position: absolute; left: 50%; top: 50%; z-index: 5;  margin: -3px 0 0 -3px;}
+
+.modular-form-tab{   padding: 0; list-style-type: none;}
+.modular-form-tab li{ padding: 0; }
+.modular-form-tab li a{ padding: 0; color: #666; border-top: solid 2px #f5f5f5; background: #f5f5f5;list-style-type: none; margin:0;  line-height: 40px; text-align: center; height: 38px; display: block;  }
+.modular-form-tab li a:hover{ background: #f9f9f9; color: #333; }
+.modular-form-tab li.active a,.modular-form-tab li.active a:hover { background: #fff; color: #333; border-top: solid 2px #337ab7; }

@@ -1,0 +1,72 @@
+<div class="container-fluid  modular-edit container-fluid">
+  <div class="row" style="padding: 20px 0; border-bottom: solid 1px #eee; background:#fafafa; ">
+    <div class="col-xs-2 col-sm-2">&nbsp;</div>
+    <div class="col-xs-10 col-sm-10">
+      <div class="row">
+      <button type="button" class="btn btn-primary" data-ng-click="onLocatSelected();">历史记录 <span class="badge">{{ locationbar.length }}</span></button>      
+      <button type="button" class="btn btn-primary" data-ng-click="onLocatFallback();"  data-ng-class="{'disabled':isfallback}" >后退</button>
+      <button type="button" class="btn btn-primary" data-ng-click="onLocatForward();"  data-ng-class="{'disabled':isforward}" >前进 </button>
+      <button type="button" class="btn btn-primary">发布</button>
+      </div>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-xs-2 col-sm-2">
+      <ul class="row mar-pad modular-type-list">
+        <li 
+          data-ng-repeat="data in item" 
+          ng-drag="true" 
+          ng-drag-data="data" 
+          data-allow-transform="true"
+          class="mar-pad col-xs-4 col-sm-4" >    
+          <i class="modular-icon">{{data.icon || data.img }}</i>
+          {{data.name}}
+        </li>  
+      </ul>
+    </div>
+    <div
+      data-ng-class="{
+      'col-xs-6':eidtForm,
+      'col-sm-6':eidtForm,
+      'col-sm-10':!eidtForm,
+      'col-sm-10':!eidtForm
+      }"
+     >
+      <div class="modular-center row">
+        <div class="modular-phone phone-6s" ng-drop="true" ng-drop-success="onDropComplete($data,$event)" data-ng-init="isRemove = [];" >
+
+          <div class="modular-conentlist"  
+           data-ng-class="{'active':data.active}"
+           data-ng-repeat="data in eidtItem" 
+           data-ng-init="isRemove[$index] = false;" 
+           ng-drop="true" 
+           ng-drop-success="onDragSuccess($index, $data,$event)" 
+           data-ng-mouseover="isRemove[$index] = true" 
+           data-ng-mouseleave="isRemove[$index] = false" 
+           data-ng-click="onDropEditForm(data)"
+           >
+              <i class="modular-remove" 
+              data-ng-click="onDropRemove(data);"             
+              data-ng-show="isRemove[$index]"
+              >x</i>
+              <div ng-drag="true" ng-drag-data="data" ng-class="data.name">
+                <div ng-bind-html ="detailContent(data.template)"></div>
+                  {{data}}
+              </div>
+          </div>
+          <br>
+          --------------编辑后的数据--------------
+           <br>
+          <textarea>{{eidtItem}}</textarea>
+          
+        </div>
+        <p class="modular-center-bg" data-ng-click="onDropEidtFormHide();"></p>
+      </div>
+
+    </div>
+    <div class="col-xs-4 col-sm-4 modular-form" data-ng-show="eidtForm" >
+      <modular-eidt-form data-item="eidtForm"  data-locationbar = "getLocationbar" >
+      </modular-eidt-form> 
+    </div>
+  </div>
+</div>

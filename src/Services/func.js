@@ -1,7 +1,7 @@
 /**
  * Created by liyi on 15/10/20.
  */
-import * as _ from 'lodash';   
+// import * as _ from 'lodash';   
 
 let lwj = {};
 
