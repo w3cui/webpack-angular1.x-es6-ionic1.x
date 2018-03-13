@@ -49,4 +49,7 @@ npm start
 └─build               发布目录
 ```
 
+**展示**
+![Image text](https://w3cui.github.io/webpack-angular1.x-es6-ionic1.x/demo.gif)
+
 需要改进的有很多，请大家可以多提提意见。后续我会不断改进，如果觉得还可以，请star，你们的star是我前进的动力。
