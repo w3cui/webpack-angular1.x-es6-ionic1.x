@@ -81,12 +81,12 @@ module.exports = {
 
     plugins: [
         new ExtractTextPlugin("./styles.css"),
-        new webpack.optimize.UglifyJsPlugin({
-          minimize: false,
-          compress: {
-            warnings: false,
-          },
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //   minimize: false,
+        //   compress: {
+        //     warnings: false,
+        //   },
+        // }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             title: 'Angular with webpack',
