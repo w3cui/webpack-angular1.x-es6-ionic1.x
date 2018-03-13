@@ -82,7 +82,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("./styles.css"),
         new webpack.optimize.UglifyJsPlugin({
-          minimize: true,
+          minimize: false,
           compress: {
             warnings: false,
           },

@@ -417,7 +417,8 @@ module.exports = (lwj) => {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
-                var img, _allowClone=true;
+                var img = null;
+                var _allowClone=true;
                 var _dragOffset = null;
                 scope.clonedData = {};
                 var initialize = function () {
@@ -518,7 +519,7 @@ module.exports = (lwj) => {
                 var toggleListeners = function (enable) {
                     // remove listeners
 
-                    if (!enable)return;
+                    if (!enable) return;
                     // add listeners.
                     element.on('mousedown touchstart touchmove touchend touchcancel', absorbEvent_);
                 };
